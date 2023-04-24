@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: Tecnologo
+      uri: mongodb+srv://angijasble:8BZjqQJft9dsrIx6@app-movil.rz5l3yg.mongodb.net/Tecnologo?authSource=admin
+
