@@ -23,7 +23,9 @@ public class UserController {
     System.out.println(login);
     return userRepository
         .findByMailAndPassword(login.getMail(), login.getPassword())
-        .orElseThrow(() -> new AccessDeniedException("Usuario no registrado"));
+        .orElseThrow(() -> new AccessDeniedException("Usuario novel registrado"));
   }
+
+
 
 }
