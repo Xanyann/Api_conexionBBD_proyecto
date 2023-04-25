@@ -22,7 +22,7 @@ public class HelpController {
 
   private final HelpRepository helpRepository;
 
-  @PostMapping("Help")
+  @PostMapping("help")
   public ResponseEntity<String> saveUser(@RequestBody Help help) {
     try {
       helpRepository.save(help);

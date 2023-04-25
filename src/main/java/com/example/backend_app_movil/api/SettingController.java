@@ -22,7 +22,7 @@ public class SettingController {
 
   private final SettingRepository settingRepository ;
 
-  @PostMapping("Setting")
+  @PostMapping("setting")
   public ResponseEntity<String> saveUser(@RequestBody Setting setting) {
     try {
       settingRepository.save(setting);

@@ -20,7 +20,7 @@ public class FileController {
 
   private final FileRepository fileRepository;
 
-  @PostMapping("Files")
+  @PostMapping("files")
   public ResponseEntity<String> saveUser(@RequestBody Files files) {
     try {
       fileRepository.save(files);

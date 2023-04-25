@@ -11,7 +11,6 @@ public class Register {
     IdUserType idUserType;
     String name;
     String lastName;
-    String userName;
     String phoneNumber;
     String mail;
     String password;
