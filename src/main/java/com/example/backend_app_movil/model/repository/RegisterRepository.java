@@ -8,5 +8,4 @@ import java.util.Optional;
 
 public interface RegisterRepository extends MongoRepository<Register, String> {
 
-
 }

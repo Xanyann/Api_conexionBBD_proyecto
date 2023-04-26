@@ -20,13 +20,13 @@ public class RegisterController {
   private final UserRepository userRepository;
 
   @PostMapping("register")
-  public ResponseEntity<String> saveUser(@RequestBody Register register) {
+  public ResponseEntity<Register> saveUser(@RequestBody Register register) {
     try {
-      registerRepository.save(register);
-      System.out.println(register);
-      return ResponseEntity.ok("Usuario registrado correctamente");
+      Register savedUser = registerRepository.save(register);
+      System.out.println(savedUser);
+      return ResponseEntity.ok(savedUser);
     } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ha ocurrido un error al registrar el usuario");
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
   }
 /*
