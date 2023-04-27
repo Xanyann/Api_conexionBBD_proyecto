@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "user")
 public class Register {
-    //IdUserType idUserType;
+    IdUserType idUserType;
     String name;
     String lastName;
     String phoneNumber;

@@ -22,6 +22,9 @@ public class RegisterController {
   @PostMapping("register")
   public ResponseEntity<Register> saveUser(@RequestBody Register register) {
     try {
+      if (register.getIdUserType().toString().isEmpty()||register.getName().isEmpty()||register.getLastName().isEmpty()||register.getMail().isEmpty()||register.getPhoneNumber().isEmpty()||register.getPassword().isEmpty()){
+          return ResponseEntity.badRequest().body(null);
+      }
       Register savedUser = registerRepository.save(register);
       System.out.println(savedUser);
       return ResponseEntity.ok(savedUser);
