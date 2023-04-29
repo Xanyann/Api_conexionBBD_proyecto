@@ -32,24 +32,7 @@ public class RegisterController {
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
   }
-/*
-    @GetMapping("/{id}")
-    public User getUsuario(@PathVariable String id) {
-      System.out.println(id);
-      return userRepository.findById(id).orElse(null);
-    }
 
-    @PutMapping("/{id}")
-    public User updateUsuario(@PathVariable String id, @RequestBody User usuario) {
-      usuario.setId(id);
-      return userRepository.save(usuario);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteUsuario(@PathVariable String id) {
-      userRepository.deleteById(id);
-    }
-*/
 
 
 
