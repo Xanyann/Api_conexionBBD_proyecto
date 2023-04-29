@@ -26,7 +26,7 @@ public class UserController {
         .orElseThrow(() -> new AccessDeniedException("Usuario no registrado"));
   }
 
-  @GetMapping("data")
+  @PostMapping("data")
   public User getUsuario(@RequestBody  Register data)  throws AccessDeniedException{
     System.out.println(data);
 
