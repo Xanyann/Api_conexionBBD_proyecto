@@ -34,7 +34,7 @@ public class UserController {
             .findByMail(data.getMail())
             .orElseThrow(() -> new AccessDeniedException("Usuario no registrado"));
   }
-  @PutMapping("update")
+  @PostMapping("update")
   public User updateUsuario(@RequestBody Register update) throws AccessDeniedException {
     System.out.println(update);
 
