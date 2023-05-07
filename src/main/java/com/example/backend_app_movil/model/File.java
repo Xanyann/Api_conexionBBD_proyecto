@@ -4,6 +4,9 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.nio.file.Files;
+import java.util.Base64;
+
 @Data
 @Document(collection = "setting")
 public class File {
@@ -17,5 +20,8 @@ public class File {
    private String cant_complaint;
    private String comment_complaint;
    private String userId;
+
+
+
 
 }
