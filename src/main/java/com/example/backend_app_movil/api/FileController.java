@@ -21,7 +21,7 @@ public class FileController {
     private final FileRepository fileRepository;
     private final SaveContentInS3 saveContentInS3;
 
-    @PostMapping("files")
+    @PostMapping("file")
     public ResponseEntity<String> saveUser(@RequestBody Files file) {
         try {
             String urlFile = saveContentInS3.saveFile(file.getName(), file.getFile());
@@ -30,6 +30,7 @@ public class FileController {
             System.out.println(file);
             return ResponseEntity.ok("Archivo guardado correctamente" + file);
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ha ocurrido un error al registrar el archivo");
         }
     }

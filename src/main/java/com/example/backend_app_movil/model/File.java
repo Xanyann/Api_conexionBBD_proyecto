@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.util.Base64;
 
 @Data
-@Document(collection = "setting")
+@Document(collection = "file")
 public class File {
 
     @Id
