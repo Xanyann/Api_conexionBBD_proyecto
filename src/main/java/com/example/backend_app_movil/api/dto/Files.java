@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Files {
     String name;
     String description;
+    String namefile;
     String file;
     String comment;
     String qualification_level;
