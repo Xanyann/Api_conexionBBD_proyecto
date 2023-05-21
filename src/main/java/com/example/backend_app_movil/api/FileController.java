@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.file.AccessDeniedException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,8 +61,26 @@ public class FileController {
 
         return fileRepository
                 .findByName(dataFileArchive.getName())
-                .orElseThrow(() -> new AccessDeniedException("Usuario no registrado"));
+                .orElseThrow(() -> new AccessDeniedException("Archivo no registrado"));
     }
+
+
+    @PostMapping("dataSearchFile")
+    public List<Files> getsearchFile(@RequestBody Files dataSearchFile) throws AccessDeniedException {
+        try {
+            System.out.println(dataSearchFile);
+            String searchQuery = ".*" + dataSearchFile.getName() + ".*";
+            List<Files> fileList = fileRepository. findAllByNameRegex(searchQuery);
+
+
+
+            return fileList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 
 }
